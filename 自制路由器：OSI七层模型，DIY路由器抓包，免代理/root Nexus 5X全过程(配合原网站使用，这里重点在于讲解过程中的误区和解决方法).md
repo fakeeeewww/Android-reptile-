@@ -38,22 +38,17 @@ r0ysue https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&mid=2247496397&idx=2&sn
      5. 如何把Android8.1.0刷入手机具体查看原网站https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&mid=2247496397&idx=2&sn=52455f90262683278013f4cc09ced831&source=41#wechat_redirect
 
   3. 步骤二：下载twrp关于bullhead的镜像：
+   	1. 下载最新版twrp地址：https://dl.twrp.me/bullhead/，记住这里面的链接时地址链接，不是下载链接。
+        2. adb传输Magisk到手机上sdcard卡上。注意这里传输的是Magisk的zip文件。https://github.com/topjohnwu/Magisk/releases/tag/v23.0找链接中最新版的Magisk页面，往下翻，找到Source Code(Zip)，进行下载。下载完之后，要进行**校验md5**。
+        > 如果最后在用twrp刷入Magisk的时候报错:**Zip file is corrupt!**那就说明刷入的文件有问题，一定要在下载完后校验md5。参考：[Zip file is corrupt!](https://android.stackexchange.com/questions/197940/zip-file-is-corrupt-error-in-twrp) 如果v23.0出错，那就试试经典的v17.3版本吧。注意：不知到为什么nexus5(Android 9 pie) root之后，输入命令``adb shell``直接进入``root``模式了，不用再输入``su``。
+        > fastboot命令刷入:
+        > 	* 误区一：这里刷入命令时，可能会报错等待命令，这里可能是因为手机连的是你的实机或虚拟机，与你使用系统不同，又或者可以拔下手机，再次连接。
+        >       * 误区二：你有时候会发现。你已经在fastboot模式下把twrp.img刷入了，第二次进入fastboot，正当你想进入到twrp时，发现显示no commend，这样的话，你还是进入到你使用的系统里面，再次把twrp.img刷入好了。
+        >       * 误区三：注意刷入twrp.img时，手机必须处于fastboot状态，就是屏幕上显示一个Android机器人和Start图标。
 
-  	1. 下载最新版twrp地址：https://dl.twrp.me/bullhead/，记住这里面的链接时地址链接，不是下载链接。
-
-          2. adb传输Magisk到手机上sdcard卡上。注意这里传输的是Magisk的zip文件。https://github.com/topjohnwu/Magisk/releases/tag/v23.0找链接中最新版的Magisk页面，往下翻，找到Source Code(Zip)，进行下载。下载完之后，要进行**校验md5**。
-          >如果最后在用twrp刷入Magisk的时候报错:**Zip file is corrupt!**那就说明刷入的文件有问题，一定要在下载完后校验md5。参考：[Zip file is corrupt!](https://android.stackexchange.com/questions/197940/zip-file-is-corrupt-error-in-twrp) 如果v23.0出错，那就试试经典的v17.3版本吧。注意：不知到为什么nexus5(Android 9 pie) root之后，输入命令``adb shell``直接进入``root``模式了，不用再输入``su``。
-       
-          3. fastboot命令刷入:
-	         1. 误区一：这里刷入命令时，可能会报错等待命令，这里可能是因为手机连的是你的实机或虚拟机，与你使用系统不同，又或者可以拔下手机，再次连接。
-                 2. 误区二：你有时候会发现。你已经在fastboot模式下把twrp.img刷入了，第二次进入fastboot，正当你想进入到twrp时，发现显示no commend，这样的话，你还是进入到你使用的系统里面，再次把twrp.img刷入好了。
-                 3. 误区三：注意刷入twrp.img时，手机必须处于fastboot状态，就是屏幕上显示一个Android机器人和Start图标。
-
-  5. 步骤三：在twrp中刷入Magisk
-
-  6. 1. 注意 
-     	1. 误区一：这里的Magisk不是说那一版都可以用的，我用了新版的一直报错说Invalid file，因此我这里推荐这一版的Magsik：https://github.com/topjohnwu/Magisk/releases/tag/v17.3 下载里面的那个Magisk-v17.3.zip，就那个3.99MB，41万左右byte的zip文件。
+5. 步骤三：在twrp中刷入Magisk
+6. 注意 
+	1. 误区一：这里的Magisk不是说那一版都可以用的，我用了新版的一直报错说Invalid file，因此我这里推荐这一版的Magsik：https://github.com/topjohnwu/Magisk/releases/tag/v17.3 下载里面的那个Magisk-v17.3.zip，就那个3.99MB，41万左右byte的zip文件。
         2. 误区二：你下载上面的Magisk后，想用adb push到手机中(在push的过程中)却显示找不到指定文件。这是因为，咱们下载下来的文件叫Magisk-v17.3 .zip，注意看“3”于“.zip”之间有一个空格，你下载下来文件后，要把那个zip文件名字中间的空格去掉。
-
-  7. 步骤四：在下载好的Magisk manager中打开超级用户权限。
-        	1. 在设置好开发者选项，且连接电脑后，就可以，打开manager,点击左边的超级用户，这样超级用户权限就打开了。
+7. 步骤四：在下载好的Magisk manager中打开超级用户权限。
+ 	1. 在设置好开发者选项，且连接电脑后，就可以，打开manager,点击左边的超级用户，这样超级用户权限就打开了。
