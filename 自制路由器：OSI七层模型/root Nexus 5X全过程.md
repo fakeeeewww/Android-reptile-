@@ -52,7 +52,7 @@ r0ysue https://mp.weixin.qq.com/s?__biz=Mzg3MjU3NzU1OA==&mid=2247496397&idx=2&sn
                      3. 误区三：注意刷入twrp.img时，手机必须处于fastboot状态，就是屏幕上显示一个Android机器人和Start图标。
 
   4. 步骤三：在twrp中刷入Magisk。
-  5. 1. 注意 
+  5. 注意 
         1. 误区一：这里的Magisk不是说那一版都可以用的，我用了新版的一直报错说Invalid file，因此我这里推荐这一版的Magsik：https://github.com/topjohnwu/Magisk/releases/tag/v17.3 下载里面的那个Magisk-v17.3.zip，就那个3.99MB，41万左右byte的zip文件。
         2. 误区二：你下载上面的Magisk后，想用adb push到手机中(在push的过程中)却显示找不到指定文件。这是因为，咱们下载下来的文件叫Magisk-v17.3 .zip，注意看“3”于“.zip”之间有一个空格，你下载下来文件后，要把那个zip文件名字中间的空格去掉。
 
